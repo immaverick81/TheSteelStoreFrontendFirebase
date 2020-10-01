@@ -1,0 +1,237 @@
+<app-header-breadcrumb></app-header-breadcrumb>
+<app-loader></app-loader>
+<!-- <p-toast id="toasts" position="top-right" [modal]="true"  [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast> -->
+<div class="ui-g">
+  <div class="ui-g-12 ui-sm-12" style="display: flex; align-items: center; padding: 5px; border: solid 1px lightgray;
+  border-radius: 3px;
+  background-color: white;">
+    <div class="ui-g-12 ui-md-12" style="margin-left: 10px;">
+      Total: {{totalCount}}
+    </div>
+    <div class="ui-g-2 ui-md-2">
+      <button
+        pButton
+        type="button"
+        (click)="showDialogPopupById(4, '', false)"
+        class="ui-button-raised btn-read"
+        style="height: 26px; text-align: center; padding-top: 2px; background-color: white; color: #007ad9"
+      >
+        <span>+ Add New</span>
+      </button>
+    </div>
+    <div class="ui-g-2 ui-md-2">
+      <button
+        pButton
+        type="button"
+        (click)="showUploadDialog()"
+        class="ui-button-raised btn-read"
+        style="height: 26px; text-align: center; padding-top: 2px; background-color: white; color: #007ad9"
+      >
+        Import
+      </button>
+    </div>
+    <div class="ui-g-2 ui-md-2">
+      <button
+        pButton
+        type="button"
+        class="ui-button-raised btn-read"
+        style="height: 26px; text-align: center; padding-top: 2px; background-color: white; color: #007ad9"
+      >
+        Export
+      </button>
+    </div>
+  </div>
+</div>
+<div id="leadForm1" class="ui-g" style="margin-top: 10px;">
+  <div class="ui-g-12 ui-sm-12" style="display: flex; align-items: center; padding: 10px; border: solid 1px lightgray;
+  border-radius: 3px;
+  background-color: white;">
+    <div class="ui-g-7 ui-md-7"></div>
+    <div class="ui-g-4 ui-md-4">
+      <p-dropdown class="inp-dd-style" [options]="status" [(ngModel)]="selectedStatus"></p-dropdown>
+    </div>
+    <div class="p-field ui-g-5 ui-md-5">
+      <p-calendar class="inp-cal-style" placeholder="From date" [(ngModel)]="fromDate" [showIcon]="true" inputId="icon1"
+                  (onSelect)="fromDateSelect()" dateFormat="mm/dd/yy"></p-calendar>
+    </div>
+    <div class="p-field ui-g-5 ui-md-5">
+      <p-calendar class="inp-cal-style" placeholder="To date" [(ngModel)]="toDate" [showIcon]="true" inputId="icon2"
+                  (onSelect)="filterCrmData1()" dateFormat="mm/dd/yy" [disabled]="disableToDate"></p-calendar>
+    </div>
+    <img *ngIf="clearDateIcon" style="height: 15px; margin-right: 10px; cursor: pointer;" src="./assets/icons/icons8-delete.svg" (click)="clearDates()" />
+    <div class="ui-g-4 ui-md-4">
+      <span class="p-input-icon-right">
+        <!-- <i class="pi pi-search"></i> -->
+        <input type="text" pInputText placeholder="Search" class="inp-style"
+               [(ngModel)]="searchValue" (input)="filterCrmDataChange()" />
+      </span>
+    </div>
+  </div>
+</div>
+<div id="leadForm1" class="ui-g" style="margin-top: 10px;">
+  <p-table [value]="crmData" [totalRecords]="totalCount" [lazy]="true"
+   (onPage)="onPage($event)"
+   [paginator]="true" [rows]="pageSize" [(first)]="first" [loading]="loading" (onLazyLoad)="loadPageData($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <ng-container  *ngFor="let col of columns">
+            <th style="background-color: #389af5; color:white; font-size: 13px; font-weight: 600 !important;">
+                {{ col.header }}
+            </th>
+          </ng-container>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-crmData let-rowIndex="rowIndex">
+        <tr>
+            <td *ngFor="let col of columns">
+              <div style="text-align: center;">{{ crmData[col.field] }}</div>
+              <!-- <div *ngIf="col.header == 'S.No'">
+                <span style="display: flex; align-items: center; justify-content: center;">{{rowIndex + 1}}</span></div> -->
+              <div *ngIf="col.header == 'Lead Info'">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Name:</span>{{crmData.FirstName}} {{crmData.LastName}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Email:</span>{{crmData.CompanyEmail}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Phone:</span>{{crmData.PhoneNumber}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Lead Type:</span>{{getLeadTypeName(crmData.LeadType)}}
+                </div>
+              </div>
+              <!-- <div *ngIf="col.header == 'Generator Info'" style="display: none;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Type:</span> {{crmData.GeneratorType}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Name:</span>{{crmData.GeneratorFirstName}} {{crmData.GeneratorLastName}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Email:</span>{{crmData.GeneratorEmail}}
+                </div>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                  <span style="font-weight: bold; margin-right: 5px;">Phone:</span>{{crmData.GeneratorPhoneNumber}}
+                </div>
+              </div> -->
+              <div *ngIf="col.header == 'Lead Of'">
+                <span style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">{{getRoleName(crmData.RoleId)}}</span>
+              </div>
+              <div *ngIf="col.header == 'Status'">Enable</div>
+              <div *ngIf="col.header == 'Created At'"><span style="display: flex;justify-content: center;align-items: center;">{{crmData.CreatedAt | date:'shortDate'}}</span></div>
+              <div id="leadForm1" *ngIf="col.header == 'Stage'">
+                <span style="display: flex;align-items: center;justify-content: center;">{{getLeadTypeName(crmData.LeadType)}}</span>
+                <!-- <p-dropdown [options]="stages" class="inp-dd-style" optionLabel="label" [(ngModel)]="selectedStage" [disabled]="disableStage"></p-dropdown> -->
+              </div>
+              <div *ngIf="col.header == ''">
+                <div style="display: flex; flex-direction: column;">
+                  <button
+                    pButton
+                    type="button"
+                    (click)="showDialogPopupById(1, crmData)"
+                    class="ui-button-raised btn-read"
+                    style="height: 26px; text-align: center; font-size: 12px; padding-top: 2px; background-color: white; color: #007ad9; margin-bottom: 5px;"
+                  >
+                    <span>View Document</span>
+                  </button>
+                  <button
+                    pButton
+                    type="button"
+                    (click)="showDialogPopupById(2, crmData)"
+                    class="ui-button-raised btn-read"
+                    style="height: 26px; text-align: center; font-size: 12px; padding-top: 2px; background-color: white; color: #007ad9; margin-bottom: 5px;"
+                  >
+                    <span>Reminders</span>
+                  </button>
+                  <button
+                    pButton
+                    type="button"
+                    (click)="showDialogPopupById(3, crmData)"
+                    class="ui-button-raised btn-read"
+                    style="height: 26px; text-align: center; font-size: 12px; padding-top: 2px; background-color: white; color: #007ad9; margin-bottom: 5px;"
+                  >
+                    <span>Tracker</span>
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="col.header == 'Actions'">
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                  <img style="height: 15px; cursor: pointer; margin-right: 10px;" src="./assets/icons/icons8-info.svg" (click)="showDialogPopupById(5, crmData, false)" />
+                  <img style="height: 15px; margin-right: 10px; cursor: pointer;" src="./assets/icons/icons8-delete.svg" (click)="deleteCrmData(crmData)" />
+                  <img style="height: 15px; margin-right: 10px; cursor: pointer;" src="./assets/icons/icons8-ban.svg" (click)="disableCrmData(crmData)" />
+                  <img style="height: 15px; cursor: pointer;" src="./assets/icons/icons8-edit.svg" (click)="showDialogPopupById(4, crmData, true)" />
+
+                </div>
+              </div>
+            </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7" style="text-align:center">No records found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+</div>
+
+
+<p-dialog id="leadForm2"
+  header="Lead Details"
+  [(visible)]="displayBasic"
+  [style]="{ width: '70vw' }"
+  [baseZIndex]="10000"
+  [closeOnEscape]="true"
+>
+  <div #vcContainer></div>
+  <div id="lead-dialog-box-btn">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <button *ngIf="!addOrUpdate" pButton type="button" class="ui-button-info" label="Save" (click)="onLeadDetailSave()"></button>
+      <button pButton *ngIf="addOrUpdate" type="button" class="ui-button-info" label="Update" (click)="onLeadDetailUpdate()"></button>
+      <span style="width: 25px;"></span>
+      <button pButton type="button" label="Close"
+              style="background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+              class="ui-button-secondary" (click)="onMaterialFormClose()"></button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog id="leadForm2"
+  header={{headerTitle}}
+  [(visible)]="displayBasicDoc"
+  [style]="{ width: '65vw' }"
+  [baseZIndex]="10000"
+  [closeOnEscape]="true"
+>
+  <div #vcContainer2></div>
+  <div id="lead-dialog-box-btn">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <!-- <button pButton type="button" class="ui-button-info" label="Save"></button> -->
+      <span style="width: 25px;"></span>
+      <button pButton type="button" label="Close" style="background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+              class="ui-button-secondary" (click)="onMaterialFormClose()"></button>
+    </div>
+  </div>
+</p-dialog>
+
+
+
+<p-dialog id="leadForm2"
+  header="Upload Product Data"
+  [(visible)]="displayBasicDoc1"
+  [style]="{ width: '65vw' }"
+  [baseZIndex]="10000"
+  [closeOnEscape]="true"
+>
+  <div #vcContainer3></div>
+  <div id="lead-dialog-box-btn">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <!-- <button pButton type="button" class="ui-button-info" label="Save"></button> -->
+      <span style="width: 25px;"></span>
+      <button pButton type="button" label="Close" style="background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+              class="ui-button-secondary" (click)="onMaterialFormClose()"></button>
+    </div>
+  </div>
+</p-dialog>
+
+

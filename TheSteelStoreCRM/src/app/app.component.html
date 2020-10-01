@@ -1,0 +1,8 @@
+<p-toast id="toasts" position="top-right" [modal]="true"  [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+<p-confirmDialog [style]="{width: '30vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<div class="ui-fluid ng-main" [ngClass]="theme">
+    <div [class.hidden]="!showLoader" class="np-loader">
+        <p-progressSpinner class="spinner" [style]="{width: '30px', height: '30px'}" strokeWidth="4" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+    </div>
+    <router-outlet></router-outlet>
+</div>

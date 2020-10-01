@@ -1,0 +1,57 @@
+.content-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.content-box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.form-field-lbl {
+  width: 180px;
+  font-weight: 500;
+  line-height: 2.5;
+}
+
+#dialog-box-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  /* margin-left: 78%; */
+}
+
+#dialog-box-btn .ui-fluid .ui-button {
+  width: 10%;
+}
+
+
+.image-box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.inp-chkbox {
+  border: 1px solid #a6a6a6;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    -o-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    -webkit-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}

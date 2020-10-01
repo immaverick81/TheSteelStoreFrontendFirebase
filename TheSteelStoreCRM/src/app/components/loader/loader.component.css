@@ -1,0 +1,34 @@
+.overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.41);
+  z-index: 99999;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+      stroke: #007ad9;
+  }
+  40% {
+      stroke: #007ad9;
+  }
+  66% {
+      stroke: #007ad9;
+  }
+  80%,
+  90% {
+      stroke: #007ad9;
+  }
+}

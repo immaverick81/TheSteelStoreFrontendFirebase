@@ -1,0 +1,63 @@
+<div class="ui-g">
+  <div class="ui-g-10 ui-sm-8" style="display: flex; align-items: center;">
+    <div class="ui-g-2 ui-md-2" style="margin-left: 10px;">
+      Select a file
+    </div>
+    <div class="ui-g-4 ui-md-4">
+      <input
+        type="file"
+        pButton
+        name="files"
+        (change)="uploadFile($event)"
+        accept=".xlsx"
+      />
+    </div>
+    <div class="ui-g-2 ui-md-2">
+      <button
+        pButton
+        type="button"
+        class="ui-button-raised btn-read"
+        (click)="onFilesAdded()"
+        style="height: 26px; text-align: center; padding-top: 2px;"
+      >
+        Upload Files
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div style="display: flex; align-items: center; justify-content: space-between;padding:15px;">
+  <!-- <input
+          type="file"
+          pButton
+          name="files"
+          (change)="uploadFile($event)"
+          accept=".xlsx"
+        /> -->
+  <!-- <button pButton type="button" label="Choose files"
+          style="width: 20vw;background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+          class="ui-button-secondary"
+          type="file"
+          name="files"
+          (change)="uploadFile($event)"
+          accept=".xlsx"></button> -->
+          <!-- <button
+          pButton
+          label="Upload files"
+          type="button"
+          class="ui-button-secondary"
+          (click)="onFilesAdded()"
+          style="width: 20vw;;background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+        >
+        </button> -->
+  <!-- <button pButton type="button" label="Download CSV" style="width: 20vw;background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+          class="ui-button-secondary"></button> -->
+</div>
+<div style="display: flex; flex-direction: column;padding: 15px;">
+
+  <h1>Disclaimer</h1>
+  <li *ngFor="let item of items" style="margin: 0; list-style: decimal;">
+    <span style="font-weight: bold;">{{item.label}}</span>{{item.value}}
+  </li>
+</div>

@@ -1,0 +1,151 @@
+.content-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.content-box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.form-field-lbl {
+  width: 180px;
+  font-weight: 500;
+  line-height: 2.5;
+}
+
+#lead-dialog-box-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+#lead-dialog-box-btn .ui-fluid .ui-button {
+  width: 40%;
+}
+
+
+.image-box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.inp-chkbox {
+  border: 1px solid #a6a6a6;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    -o-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    -webkit-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+:host ::ng-deep .ui-button {
+  margin: 0.5em 0.5em 0.5em 0;
+}
+@media screen and (max-width: 40em) {
+  :host ::ng-deep .ui-dialog {
+    width: 75vw !important;
+  }
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  padding: 0;
+}
+
+.ui-button:enabled:active {
+  background-color: white;
+  color: #005b9f;
+  border-color: #005b9f;
+}
+
+
+#leadForm1 .inp-style {
+  width: 12vw; border-radius: 3px; border: 1px solid #007ad9;
+}
+
+#leadForm1 .inp-dd-style .ui-dropdown {
+  width: 8vw; border-radius: 0; border: none; border-bottom: 1px solid #333333;
+}
+
+
+#leadForm1 .inp-cal-style .ui-calendar.ui-calendar-w-btn .ui-inputtext {
+  border: none;
+  border-bottom: 1px solid #333333;
+  border-radius: 0;
+}
+
+#leadForm1 .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+  background: white;
+  color: black;
+  border: none;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+/* #leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(1) {
+  width: 4vw;
+} */
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(1) {
+  width: 15vw;
+}
+
+/* #leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(3) {
+  width: 17vw;
+} */
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(2) {
+  width: 7vw;
+}
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(3) {
+  width: 10vw;
+}
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(4) {
+  width: 8vw;
+}
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(5) {
+  width: 5vw;
+}
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(6) {
+  width: 9vw;
+}
+
+#leadForm1 .ui-table .ui-table-thead > tr > th:nth-child(7) {
+  width: 7.5vw;
+}
+
+
+#leadForm2 .ui-dialog .ui-dialog-titlebar {
+  border: none;
+  background-color: #389af5;
+  color: white;
+  padding: 1em;
+  font-weight: 700;
+  border-bottom: 0 none;
+  text-align: center;
+}
+
+#leadForm2 .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon span {
+  color: black;
+}

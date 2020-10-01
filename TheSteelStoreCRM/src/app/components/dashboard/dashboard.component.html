@@ -1,0 +1,80 @@
+<!-- <p-messages [(value)]="msgs"></p-messages> -->
+<div class="ui-g dashboard-card">
+  <div class="ui-g-12 ui-md-12">
+    <p-card styleClass="overview-box-0">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white; font-weight: bold;">
+        <span>WHAT ARE YOU LOOKING FOR?</span>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-1">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Galvanized Steel Coil</span>
+        <a style="text-align: center;color:white;font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-2">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Galvalume Steel Coil</span>
+        <a style="text-align: center;color:white;font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-3">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Galvaneneal Steel Coil</span>
+        <a style="text-align: center;color:white;font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-4">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Hot Roll Steel Coil</span>
+        <a style="text-align: center;color:white; font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-5">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Cold Roll Steel Coil</span>
+        <a style="text-align: center;color:white; font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-4">
+    <p-card styleClass="overview-box-6">
+      <div style="display: flex; flex-direction: column; font-size: 15pt; color: white;">
+        <span style="font-weight: bold;">Electro Galvanized Steel Coil</span>
+        <a style="text-align: center;color:white; font-size: 15px;" [routerLink]="['/main/steel']">View all listings  <i class="fa fa-chevron-right"></i></a>
+      </div>
+    </p-card>
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6">
+    <p-card>
+      <p-chart
+        type="doughnut"
+        [data]="doughnutChartData"
+        [height]="200"
+        [width]="200"
+      ></p-chart>
+    </p-card>
+  </div>
+  <div class="ui-g-12 ui-md-6">
+    <p-card>
+      <p-chart
+        type="bar"
+        [data]="barChartData"
+        [height]="200"
+        [width]="200"
+      ></p-chart>
+    </p-card>
+  </div>
+</div>

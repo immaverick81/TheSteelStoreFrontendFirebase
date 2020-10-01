@@ -1,0 +1,94 @@
+<div class="login-panel">
+  <div
+    class="p-grid p-nogutter p-justify-center p-align-center"
+    style="height: 100%;"
+  >
+  <div style="display: flex;justify-content: center;">
+    <div class="p-xl-5 p-lg-6 p-md-8 p-sm-10">
+      <div style="line-height: 1.7; font-size: 31pt; color: white;">Buy steel with confidence</div>
+      <div style="line-height: 1.2; font-size: 22px; color: white;">An online marketplace which stands behind its Steel</div>
+    </div>
+    <div class="p-xl-4 p-lg-6 p-md-8 p-sm-10">
+      <p-panel header="{{ 'the-steel-store' | translate }}">
+        <div class="p-col-12">
+          <!-- <p-messages [(value)]="msgs"></p-messages> -->
+        </div>
+        <div class="p-grid p-justify-center p-align-center">
+          <div class="p-xl-4 p-lg-6 p-md-8 p-sm-10">
+            <!-- <img src="assets/images/logo-large.png" class="login-logo" /> -->
+            <!-- <div style="font-size: 14px; font-weight: bold; text-align: center;">Buy steel with confidence</div> -->
+          </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"
+                ><i class="fa fa-user"></i
+              ></span>
+              <input
+                id="input-username"
+                type="text"
+                size="30"
+                pInputText
+                [(ngModel)]="userName"
+                placeholder="Enter User name"
+              />
+            </div>
+          </div>
+          <div class="p-col-12">
+            <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+              <input
+                id="input-password"
+                type="password"
+                size="30"
+                pInputText
+                [(ngModel)]="password"
+                placeholder="Enter Password"
+              />
+            </div>
+          </div>
+          <div class="p-col-12 text-center">
+            <a>Forgot Password?</a>
+          </div>
+        </div>
+        <div class="p-grid">
+          <div class="p-col-6" style="display: flex;">
+            <button
+              pButton
+              type="button"
+              [disabled]="loading"
+              label="{{ 'Login' | translate }}"
+              class="ui-button-raised"
+              (click)="onClickLogin()"
+              style="background-color: #0053b1;"
+            >
+            <span *ngIf="loading" style="display: flex;
+            padding-left: 70px;
+            justify-content: center;">
+              <p-progressSpinner  [style]="{width: '20px', height: '30px',
+              position: 'absolute'}" strokeWidth="5"
+               fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+            </span>
+              </button>
+          </div>
+          <div class="p-col-6">
+            <button
+              pButton
+              type="button"
+              label="{{ 'Register' | translate }}"
+              class="ui-button-raised"
+              style="background-color: #0053b1;"
+              [routerLink]="['/register']"
+            >
+
+          </button>
+          </div>
+        </div>
+      </p-panel>
+      <!-- <div class="extra-page-footer">
+        <div>2020@ The Steel Store.</div>
+        <div>Version : {{ version }}</div>
+      </div> -->
+    </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<app-header-breadcrumb></app-header-breadcrumb>
+<p-panel header="Steel Store List">
+
+  <div class="ui-g">
+    <div class="ui-g-10 ui-sm-8" style="display: flex; align-items: center;">
+      <div class="ui-g-2 ui-md-2" style="margin-left: 10px;">
+        Select a file
+      </div>
+      <div class="ui-g-4 ui-md-4">
+        <input
+          type="file"
+          pButton
+          name="files"
+          (change)="uploadFile($event)"
+          accept=".xlsx"
+        />
+      </div>
+      <div class="ui-g-2 ui-md-2">
+        <button
+          pButton
+          type="button"
+          class="ui-button-raised btn-read"
+          (click)="onFilesAdded()"
+          style="height: 26px; text-align: center; padding-top: 2px;"
+        >
+          Upload Files
+        </button>
+      </div>
+      <div class="ui-g-3 ui-md-3">
+        <button
+          pButton
+          type="button"
+          class="ui-button-raised btn-read"
+          (click)="syncToAlgolia()"
+          style="height: 26px; text-align: center; padding-top: 2px;"
+        >
+          Sync to Algolia
+        </button>
+      </div>
+      <div class="ui-g-4 ui-md-4">
+        <label
+          style="display: flex; align-items: center; justify-content: flex-end;"
+          >Total Count: {{totalRecords}}</label>
+      </div>
+    </div>
+    <div
+      class="ui-g-2 ui-sm-4"
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+
+      <!-- <input type="text" pInputText [(ngModel)]="pageSize" /> -->
+    </div>
+  </div>
+  <p-table [value]="steel" [paginator]="true" [rows]="pageSize" [loading]="loading" [lazy]="true"
+   (onPage)="onPage($event)" [rows]="pageSize" [(first)]="first" (onLazyLoad)="loadPageData($event)"
+   [totalRecords]="totalRecords">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="background-color: #146fd7; color:white; font-weight: 600 !important;" *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-steel>
+      <tr>
+        <td *ngFor="let col of columns">
+          <div style="text-align: center;">{{ steel[col.field] }}</div>
+          <div *ngIf="col.field == ''">
+            <button
+              pButton
+              type="button"
+              (click)="showBasicDialog(steel)"
+              label="Edit"
+            ></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+          <td colspan="9" style="text-align:center">No records found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-panel>
+
+<p-dialog
+  header="Steel Details"
+  [(visible)]="displayBasic"
+  [style]="{ width: '90vw' }"
+  [baseZIndex]="10000"
+  [closeOnEscape]="true"
+>
+  <div #vcContainer></div>
+
+  <div id="dialog-box-btn">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <button pButton type="button" class="ui-button-info" label="Save" (click)="onMaterialFormSave()"></button>
+      <span style="width: 25px;"></span>
+      <button pButton type="button" label="Close" style="background-color: white; color: #116fbf; border: 1px solid #116fbf;"  class="ui-button-secondary" (click)="onMaterialFormClose()"></button>
+    </div>
+  </div>
+</p-dialog>

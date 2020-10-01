@@ -1,0 +1,34 @@
+<div class="content-box1">
+  <div style="display: flex; flex-direction: column;">
+    <!-- <p-fileUpload #fileInput name="file" multiple="multiple" [showUploadButton]="true"
+    (onUpload)="onUpload($event)" [showCancelButton]="false"
+    maxFileSize="200000000000" accept="image/*,.csv,.xml,.doc,.docx,.pdf">
+    <ng-template pTemplate="content">
+    <div class="ui-fileupload-row" *ngFor="let file of uploadedFiles; let i = index;"></div>
+    </ng-template>
+    </p-fileUpload> -->
+
+
+    <p-fileUpload #fileInput name="file" multiple="multiple" [showUploadButton]="true" (onUpload)="onUpload($event)"
+            multiple="multiple" accept="image/*,.csv,.xml,.doc,.docx,.pdf" maxFileSize="1000000">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+    </p-fileUpload>
+    <div style="margin-top: 15px;">
+      <button pInputText type="submit" (click)="saveFileDetails()">Upload Documents</button>
+    </div>
+  </div>
+</div>
+
+<div class="ui-g" style="margin-top: 10px;">
+  <ng-container *ngFor="let item of imageList">
+    <figure class="image-block ng-star-inserted" style="width: 116px;height: 90px;border-radius: 5px;position: relative;margin: 8px;">
+      <a target="_blank" href="{{item.imgSrc}}">
+        <img src="{{item.imgSrc}}" style="width: 116px;height: 90px;border-radius: 10px;object-fit: cover;">
+      </a>
+    </figure>
+  </ng-container>
+</div>

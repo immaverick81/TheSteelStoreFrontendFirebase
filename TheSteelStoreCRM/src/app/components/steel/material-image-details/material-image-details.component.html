@@ -1,0 +1,61 @@
+<form [formGroup]="imageDetails">
+  <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+    <div class="content-box1">
+      <span class="form-field-lbl" style="font-weight: bold; width: 200px;">
+        {{ materialDetails["THICKNESS_IN"] }} X
+        {{ materialDetails["WIDTH_IN"] }} -
+        {{ materialDetails["WEIGHT_LB"] }} lbs</span>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+          <span class="form-field-lbl">Select an Image</span>
+          <input type="file" pButton (change)="fileChangeEvent($event)" style="width: 90%; height: 35px;" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span class="form-field-lbl">Lot location</span>
+          <input type="text" pInputText formControlName="location" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span class="form-field-lbl">Tag number</span>
+          <input type="text" pInputText formControlName="tagNumber" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span class="form-field-lbl">Lot quality</span>
+        <input type="text" pInputText formControlName="quality" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span class="form-field-lbl"></span>
+        </div>
+      </div>
+      <div class="image-box1">
+        <div style="width: 60%;">
+          <image-cropper #vcContainer
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [containWithinAspectRatio]="containWithinAspectRatio"
+        [aspectRatio]="4 / 3"
+        [resizeToWidth]="256"
+        [cropperMinWidth]="128"
+        [imageURL]="prodImageUrl"
+        [onlyScaleDown]="true"
+        [roundCropper]="false"
+        [canvasRotation]="canvasRotation"
+        [transform]="transform"
+        [alignImage]="'left'"
+        format="jpg"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady($event)"
+        (loadImageFailed)="loadImageFailed()"
+        [ngStyle]="{visibility: 'visible'}"
+    ></image-cropper>
+
+        </div>
+        <div style="width: 40%;">
+          <img [src]="croppedImage" [style.border]="croppedImage ? '1px solid black' : 'none'" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

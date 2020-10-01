@@ -1,0 +1,156 @@
+<div id="leadForm3" style="display: flex; flex-direction: column; margin-bottom: 10px;">
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Name</label>
+      <label class="inp-style">{{crmLeadDetail.FirstName}} {{crmLeadDetail.LastName}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">SIC</label>
+      <label class="inp-style">{{crmLeadDetail.SIC}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Website</label>
+      <label class="inp-style">{{crmLeadDetail.Website}}</label>
+    </div>
+  </div>
+
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Company ID</label>
+      <label class="inp-style">{{crmLeadDetail.CompanyID}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Company Name</label>
+      <label class="inp-style">{{crmLeadDetail.CompanyName}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Company Email</label>
+      <label class="inp-style">{{crmLeadDetail.CompanyEmail}}</label>
+    </div>
+  </div>
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Primary Address</label>
+      <label class="inp-style">{{crmLeadDetail.PrimaryAddress}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Mailing Address</label>
+      <label class="inp-style">{{crmLeadDetail.MailingAddress}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Headquarter</label>
+      <label class="inp-style">{{crmLeadDetail.Headquarters}}</label>
+    </div>
+  </div>
+
+  <!-- <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style">{{crmLeadDetail.LeadOf}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style">{{crmLeadDetail.LeadType}}</label>
+    </div>
+
+  </div> -->
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Phone Number</label>
+      <label class="inp-style">{{crmLeadDetail.PhoneNumber}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Fax</label>
+      <label class="inp-style">{{crmLeadDetail.Fax}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Country Code</label>
+      <label class="inp-style">{{crmLeadDetail.CountryCode}}</label>
+    </div>
+
+  </div>
+
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Brand Name</label>
+      <label class="inp-style">{{crmLeadDetail.BrandName}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Brand Classification</label>
+      <label class="inp-style">{{crmLeadDetail.BrandClassification}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Brand Description</label>
+      <label class="inp-style">{{crmLeadDetail.BrandDescription}}</label>
+    </div>
+  </div>
+
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Square Footage</label>
+      <label class="inp-style">{{crmLeadDetail.SquareFootage}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Ownership</label>
+      <label class="inp-style">{{crmLeadDetail.Ownership}}</label>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Distribution Area</label>
+      <label class="inp-style">{{selectArea['label']}}</label>
+    </div>
+
+  </div>
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Code</label>
+      <label class="inp-style">{{crmLeadDetail.Code}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Employee(#'s)</label>
+      <label class="inp-style">{{crmLeadDetail.Employee}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Annual Sales($) mil</label>
+      <label class="inp-style">{{crmLeadDetail.AnnualSales}}</label>
+    </div>
+  </div>
+  <div class="content-box2">
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Lead Of</label>
+      <label class="inp-style">{{selectRole['label']}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">Year Estd.</label>
+      <label class="inp-style">{{crmLeadDetail.YearEstablished}}</label>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label class="inp-style" style="font-weight: bold;">ISO Rating</label>
+      <label class="inp-style">{{crmLeadDetail.IsoRating}}</label>
+    </div>
+  </div>
+  <div class="content-box2" style="margin-top: 30px;">
+    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 0px;">
+      <span style="font-weight: bold; margin-right: 5px;">Documents: </span>
+    <div style="display: flex; flex-direction: row;">
+        <ng-container *ngFor="let item of imageList">
+          <figure class="image-block ng-star-inserted" style="width: 116px;height: 90px;border-radius: 5px;position: relative;margin: 8px;">
+            <a target="_blank" href="{{item.imgSrc}}">
+              <img src="{{item.imgSrc}}" style="width: 116px;height: 90px;border-radius: 10px;object-fit: cover;">
+            </a>
+          </figure>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="content-box2" style="margin-top: 30px;">
+    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 0px;">
+      <span style="font-weight: bold; margin-right: 5px;">Tracker Info: </span>
+      <div #vcContainer></div>
+    </div>
+  </div>
+  <div class="content-box2" style="margin-top: 30px;">
+    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 0px;">
+      <span style="font-weight: bold; margin-right: 5px;">Reminder Info: </span>
+      <div #vcContainer2></div>
+    </div>
+  </div>
+</div>

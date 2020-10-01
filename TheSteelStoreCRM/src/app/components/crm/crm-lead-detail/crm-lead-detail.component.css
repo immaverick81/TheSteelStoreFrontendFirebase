@@ -1,0 +1,32 @@
+#leadForm .inp-style {
+  width: 30vw; border-radius: 0; border: none; border-bottom: 1px solid #333333;
+}
+
+#leadForm .inp-ta-style {
+  width: 66vw; border-radius: 0; border: none; border-bottom: 1px solid #333333;
+}
+
+#leadForm .inp-dd-style .ui-dropdown {
+  width: 30vw; border-radius: 0; border: none; border-bottom: 1px solid #333333;
+}
+
+
+#leadForm .inp-cal-style .ui-calendar.ui-calendar-w-btn .ui-inputtext {
+  border: none;
+  border-bottom: 1px solid #333333;
+  border-radius: 0;
+}
+
+#leadForm .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+  background: white;
+  color: black;
+  border: none;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+#leadForm .red-border {
+  border-bottom: 1px solid red;
+}
+

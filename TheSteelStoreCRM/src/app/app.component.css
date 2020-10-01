@@ -1,0 +1,28 @@
+#toasts {
+	position: absolute;
+	z-index: 999;
+}
+
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@keyframes ui-progress-spinner-color {
+	100%,
+	0% {
+		stroke: #007ad9;
+	}
+	40% {
+		stroke: #007ad9;
+	}
+	66% {
+		stroke: #007ad9;
+	}
+	80%,
+	90% {
+		stroke: #007ad9;
+	}
+}

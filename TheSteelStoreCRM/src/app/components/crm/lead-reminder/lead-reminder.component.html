@@ -1,0 +1,51 @@
+<div class="ui-g" style="margin-top: 10px;">
+  <div *ngIf="showEditForm" style="display: flex; align-items: center; justify-content: space-between;">
+    <form [formGroup]="trackerForm">
+      <div id="leadForm5" style="display: flex; flex-direction: column; margin-bottom: 10px;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <!-- <p-dropdown [options]="leadTypeOptions" class="inp-dd-style" placeholder="Lead Of *" formControlName="status"></p-dropdown> -->
+            <span>{{crmLeadDetail.CompanyName}}</span>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <p-calendar [inputStyle]="{'width':'25.6vw'}" placeholder="Enter date *" class="inp-cal-style" [showIcon]="true" inputId="icon" formControlName="createdAt"></p-calendar>
+          </div>
+        </div>
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <textarea pInputTextarea placeholder="Tracker Comments" class="inp-ta-style" formControlName="trackComments"></textarea>
+          </div>
+        </div>
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <button pButton type="button" label="Send Reminder"
+            style="background-color: white; color: #116fbf; border: 1px solid #116fbf;"
+            class="ui-button-secondary" (click)="addTracker()"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <p-table [value]="trackerDetails" [paginator]="true" [rows]="pageSize" [loading]="loading">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="background-color: #389af5; color:white; font-weight: 600 !important;" *ngFor="let col of columns">
+            {{ col.header }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-crmData>
+        <tr>
+            <td *ngFor="let col of columns">
+              <div style="text-align: center;">{{ crmData[col.field] }}</div>
+
+            </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="4" style="text-align:center">No records found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+</div>

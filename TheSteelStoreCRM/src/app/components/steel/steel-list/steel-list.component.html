@@ -1,0 +1,30 @@
+<form [formGroup]="materialDetailsForm">
+<p-tabView>
+  <p-tabPanel header="Material Details">
+    <app-material-details
+      [materialDetails]="materialDetails" [specifications]="materialDetailsForm.controls['specifications']"
+    ></app-material-details>
+  </p-tabPanel>
+  <p-tabPanel header="Additional Information">
+    <span
+      style="
+        display: flex;
+        align-items: center;
+        justify-self: start;
+        font-size: large;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        line-height: 2.2;
+      "
+      >{{ materialDetails["PRODUCT"] }}</span
+    >
+    <textarea [rows]="8" [cols]="30" pInputTextarea autoResize="autoResize">{{steelInfo}}</textarea>
+
+  </p-tabPanel>
+  <p-tabPanel header="Image Details">
+    <app-material-image-details
+      [materialDetails]="materialDetails" [imageDetails]="materialDetailsForm.controls['imageDetails']"
+    ></app-material-image-details>
+  </p-tabPanel>
+</p-tabView>
+</form>

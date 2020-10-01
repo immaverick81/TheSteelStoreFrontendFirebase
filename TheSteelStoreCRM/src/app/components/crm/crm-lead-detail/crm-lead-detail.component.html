@@ -1,0 +1,217 @@
+<form [formGroup]="leadDetailsForm">
+  <div id="leadForm" style="display: flex; flex-direction: column; margin-bottom: 10px;">
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="First Name" class="inp-style" pInputText formControlName="firstName" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Last Name" class="inp-style" pInputText formControlName="lastName" />
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="SIC" class="inp-style" pInputText formControlName="sic" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Company ID" class="inp-style" pInputText formControlName="companyId" />
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Company Name" class="inp-style" pInputText formControlName="companyName" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Company Email" class="inp-style" pInputText formControlName="companyEmail" />
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <p-dropdown [options]="leadOfOptions" class="inp-dd-style" optionLabel="label" [(ngModel)]="selectedLeadOf" placeholder="Lead Of" formControlName="leadOf"></p-dropdown>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <p-dropdown [options]="leadTypeOptions" class="inp-dd-style" optionLabel="label" [(ngModel)]="selectedLeadType" placeholder="Lead Type" formControlName="leadType"></p-dropdown>
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <textarea pInputTextarea placeholder="Primary Address" class="inp-ta-style" formControlName="primaryAddress"></textarea>
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <textarea pInputTextarea placeholder="Mailing Address" class="inp-ta-style" formControlName="mailingAddress"></textarea>
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Phone Number" class="inp-style" pInputText formControlName="phoneNumber" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Fax" class="inp-style" pInputText formControlName="fax" />
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <p-dropdown [options]="allCountryCodes" optionLabel="label" [(ngModel)]="selectCountryCode" class="inp-dd-style" placeholder="Country Code" formControlName="countryCode"></p-dropdown>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Brand Classification" class="inp-style" pInputText formControlName="brandClassification" />
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Brand Name" class="inp-style" pInputText formControlName="brandName" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Brand Description" class="inp-style" pInputText formControlName="brandDescription" />
+      </div>
+    </div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Employee" class="inp-style" pInputText formControlName="employee" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Annual Sales ($) mil" class="inp-style" pInputText formControlName="annualSales" />
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Square Footage" class="inp-style" pInputText formControlName="squareFootage" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Ownership" class="inp-style" pInputText formControlName="ownership" />
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <p-dropdown [options]="yearEstablished" class="inp-dd-style" optionLabel="label" [(ngModel)]="selectedYear" placeholder="Year Established" formControlName="yearEstablished"></p-dropdown>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <p-dropdown [options]="distributionArea" class="inp-dd-style" optionLabel="label" [(ngModel)]="selectedArea" placeholder="Distribution Area" formControlName="distributionArea"></p-dropdown>
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Headquarters" class="inp-style" pInputText formControlName="headquarters" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="ISO Ratings" class="inp-style" pInputText formControlName="isoRating" />
+      </div>
+    </div>
+
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Code" class="inp-style" pInputText formControlName="code" />
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <input type="text" placeholder="Website" class="inp-style" pInputText formControlName="website" />
+      </div>
+    </div>
+    <div style="display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    font-weight: bold;">Generator's Info</div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: row;">
+        <p-radioButton name="city" value="Team Member" formControlName="teamMember" inputId="city1"></p-radioButton>
+        <label for="city1" style="margin-left: 10px;">Team Member</label>
+      </div>
+        <div style="display: flex; flex-direction: row; margin-right: 10px;">
+          <p-radioButton name="city" value="Other" formControlName="teamMember" inputId="city1"></p-radioButton>
+          <label for="city1" style="margin-left: 10px;">Other</label>
+        </div>
+      <div style="display: flex; flex-direction: column;">
+        <span style="width: 30vw;"></span>
+        <!-- <p-dropdown [options]="leadTypeOptions" class="inp-dd-style" placeholder="Lead Type" formControlName="leadType"></p-dropdown> -->
+      </div>
+    </div>
+
+
+    <div style="display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    font-weight: bold;">Documents</div>
+    <div class="content-box1">
+      <div style="display: flex; flex-direction: column;">
+        <p-fileUpload #fileInput name="file" multiple="multiple" [showUploadButton]="true" (onUpload)="onUpload($event)"
+            multiple="multiple" accept="image/*,.csv,.xml,.doc,.docx,.pdf" maxFileSize="1000000">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+        <div style="margin-top: 15px;">
+          <button pInputText type="submit" (click)="saveFileDetails()">Upload Documents</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-g" style="margin-top: 10px;">
+  <ng-container *ngFor="let item of imageList">
+    <figure class="image-block ng-star-inserted" style="width: 116px;height: 90px;border-radius: 5px;position: relative;margin: 8px;">
+      <a target="_blank" href="{{item.imgSrc}}">
+        <img src="{{item.imgSrc}}" style="width: 116px;height: 90px;border-radius: 10px;object-fit: cover;">
+      </a>
+    </figure>
+  </ng-container>
+</div>
+
+    <div style="display: none;">
+      <div style="display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px;
+      font-weight: bold;">Contract Digitilization</div>
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+        <p-calendar [inputStyle]="{'width':'27.6vw'}" placeholder="Expiry Date *" class="inp-cal-style" [showIcon]="true" inputId="icon" formControlName="expiryDate"></p-calendar>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Iban" class="inp-style" pInputText formControlName="Iban" />
+        </div>
+      </div>
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Swift Code" class="inp-style" pInputText formControlName="swiftCode" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Bank Address" class="inp-style" pInputText formControlName="bankAddress" />
+        </div>
+      </div>
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Sort Code" class="inp-style" pInputText formControlName="sortCode" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Bank Name" class="inp-style" pInputText formControlName="bankName" />
+        </div>
+      </div>
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Country" class="inp-style" pInputText formControlName="country" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Routing Number" class="inp-style" pInputText formControlName="routingNumber" />
+        </div>
+      </div>
+      <div class="content-box1">
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Account Number" class="inp-style" pInputText formControlName="accountNumber" />
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <input type="text" placeholder="Beneficiary Name" class="inp-style" pInputText formControlName="beneficiaryName" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>

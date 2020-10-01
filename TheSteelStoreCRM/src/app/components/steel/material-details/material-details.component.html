@@ -1,0 +1,177 @@
+<form [formGroup]="specifications">
+  <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+    <p-panel header="Dimension" [toggleable]="true" [collapsed]="false">
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Product</span>
+            <input type="text" pInputText formControlName="product" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Thickness (in)</span>
+            <input type="text" pInputText formControlName="thickness" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Width (in)</span>
+            <input type="text" pInputText formControlName="width" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Length (in)</span>
+            <input type="text" pInputText formControlName="length" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Inside diameter (in)</span>
+            <input type="text" pInputText formControlName="diameter" />
+          </div>
+        </div>
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Weight (lbs)</span>
+            <input type="text" pInputText formControlName="weight" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Mark Inactive</span>
+            <span style="padding-left: 35px;">
+              <input type="checkbox" class="inp-chkbox" formControlName="inactive" />
+            </span>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl"></span>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl"></span>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl"></span>
+          </div>
+        </div>
+      </div>
+    </p-panel>
+    <span style="margin-bottom: 5px;"></span>
+    <p-panel header="Physical Properties" [toggleable]="true" [collapsed]="false">
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Grade</span>
+          <input type="text" pInputText formControlName="grade" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Rockwell</span>
+          <input type="text" pInputText formControlName="rockwell" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Yield</span>
+          <input type="text" pInputText formControlName="yield" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Elongation</span>
+            <input type="text" pInputText formControlName="elongation" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Tensile</span>
+          <input type="text" pInputText formControlName="tensile" />
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Pass/oil</span>
+          <input type="text" pInputText formControlName="passoil" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Finish</span>
+          <input type="text" pInputText formControlName="finish" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Temper</span>
+          <input type="text" pInputText formControlName="temper" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Coating</span>
+          <input type="text" pInputText formControlName="coating" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">PIW</span>
+          <input type="text" pInputText formControlName="piw" />
+          </div>
+        </div>
+      </div>
+    </p-panel>
+    <span style="margin-bottom: 5px;"></span>
+    <p-panel header="Chemical Composition" [toggleable]="true" [collapsed]="false">
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Carbon</span>
+          <input type="text" pInputText formControlName="carbon" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Magnesium</span>
+            <input type="text" pInputText formControlName="magnesium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Phosphourus</span>
+          <input type="text" pInputText formControlName="phosphorous" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Sulphur</span>
+          <input type="text" pInputText formControlName="suplhur" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Silicon</span>
+          <input type="text" pInputText formControlName="silicon" />
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Alluminium</span>
+          <input type="text" pInputText formControlName="aluminium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Chromium</span>
+          <input type="text" pInputText formControlName="chromium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Niobium</span>
+          <input type="text" pInputText formControlName="niobium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Titanium</span>
+          <input type="text" pInputText formControlName="titanium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Calcium</span>
+          <input type="text" pInputText formControlName="calcium" />
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="content-box1">
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Nitrogen</span>
+            <input type="text" pInputText formControlName="nitrogen" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Nickel</span>
+            <input type="text" pInputText formControlName="nickel" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Copper</span>
+          <input type="text" pInputText formControlName="copper" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Vanadium</span>
+            <input type="text" pInputText formControlName="vanadium" />
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span class="form-field-lbl">Boron</span>
+          <input type="text" pInputText formControlName="boron" />
+          </div>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+</form>

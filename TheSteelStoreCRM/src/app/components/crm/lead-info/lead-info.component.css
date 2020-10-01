@@ -1,0 +1,11 @@
+.content-box2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#leadForm3 .inp-style {
+  width: 15vw;
+}
