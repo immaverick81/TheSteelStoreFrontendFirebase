@@ -8,13 +8,18 @@ import {
 	Injector,
 	ViewEncapsulation
 } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
 import { RouteStateService } from 'src/app/core/services/route-state.service';
 import { UserDataService } from 'src/app/core/services/user-data.service';
+
 import { map, tap } from 'rxjs/operators';
+
 import * as XLSX from 'xlsx';
+
 import * as FileSaver from 'file-saver';
+
 import { MaterialsFormService } from 'src/app/shared/services/materials-form.service';
-import { FormGroup } from '@angular/forms';
 import { SteelDataModel } from 'src/app/core/models/steel-data.model';
 import { SteelDataService } from 'src/app/core/services/steel-data.service';
 import { ToastService } from 'src/app/core/services/toast.service';
@@ -112,7 +117,7 @@ export class SteelComponent implements OnInit {
 		this.allMaterialDetails.map((item: any, index: number) => {
 			if (!item.INACTIVE) {
 				this.steel.push({
-					COILNUMBER: `TS${item.COILNUMBER}`,
+					COILNUMBER: `${item.COILNUMBER}`,
 					PRODUCT: item.PRODUCT,
 					QUALITY: item.QUALITY,
 					THICKNESS_IN: item.THICKNESS_IN,
@@ -199,14 +204,14 @@ export class SteelComponent implements OnInit {
 		this.pageSize = event.rows;
 		const currentPageNumber = this.getCurrentPage(this.first, this.pageSize);
 		console.log(this.steel);
-		this.coilNumber = currentPageNumber === 1 ? null : this.steel[this.pageSize - 1].PIW;
+		this.coilNumber = currentPageNumber === 1 ? null : this.steel[this.pageSize - 1].COILNUMBER;
 	}
 
 	onPage(event: any) {
 		this.first = event.first;
 		this.pageSize = event.rows;
 		const currentPageNumber = this.getCurrentPage(this.first, this.pageSize);
-		this.coilNumber = currentPageNumber === 1 ? null : this.steel[this.pageSize - 1].PIW;
+		this.coilNumber = currentPageNumber === 1 ? null : this.steel[this.pageSize - 1].COILNUMBER;
 		this.loadSteelDataOnGrid();
 		return;
 	}
